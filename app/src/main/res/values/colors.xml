@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+
+    <color name="color_333">#ff333333</color>
+    <color name="color_666">#ff666666</color>
+    <color name="color_999">#ff999999</color>
+    <color name="color_white">#ffffff</color>
+    <color name="color_black">#000000</color>
+    <color name="color_ccc">#cccccc</color>
+    <color name="color_f3f3f3">#f3f3f3</color>
+    <color name="color_f6f6f6">#f6f6f6</color>
+    <color name="color_66000000">#66000000</color>
+    <color name="alpha_black_99">#89000000</color>
+    <color name="theme_color">#34AB6E</color>
+
+
+    <!--    换肤的color-->
+    <color name="color_BAE019">#BAE019</color>
+    <color name="color_14A399">#14A399</color>
+    <color name="color_7ED1FB">#7ED1FB</color>
+    <color name="color_3C589B">#3C589B</color>
+    <color name="color_099FDE">#099FDE</color>
+    <color name="color_FA99A0">#FA99A0</color>
+    <color name="color_DE3031">#DE3031</color>
+    <color name="color_FFC400">#FFC400</color>
+    <color name="color_FE7B21">#FE7B21</color>
+    <color name="color_C17E61">#C17E61</color>
+    <color name="color_547A8C">#547A8C</color>
+    <color name="color_4E2505">#4E2505</color>
+
+
+</resources>
