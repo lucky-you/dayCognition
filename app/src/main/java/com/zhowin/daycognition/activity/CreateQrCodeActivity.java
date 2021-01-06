@@ -77,7 +77,7 @@ public class CreateQrCodeActivity extends BaseActivity<ActivityCreateQrCodeBindi
                     .callback(new PermissionUtils.SimpleCallback() {
                         @Override
                         public void onGranted() {
-                            saveQrCodeToAlbum(mBinding.clQrRootLayout);
+                            saveQrCodeToAlbum();
                         }
 
                         @Override
@@ -87,8 +87,8 @@ public class CreateQrCodeActivity extends BaseActivity<ActivityCreateQrCodeBindi
         }
     }
 
-    private void saveQrCodeToAlbum(View llQrCodeLayout) {
-        Bitmap bitmapSrc = getCacheBitmapFromView(llQrCodeLayout);
+    private void saveQrCodeToAlbum() {
+        Bitmap bitmapSrc = getCacheBitmapFromView(mBinding.clQrRootLayout);
         ThreadUtils.executeBySingle(new ThreadUtils.SimpleTask<File>() {
             @Override
             public File doInBackground() throws Throwable {

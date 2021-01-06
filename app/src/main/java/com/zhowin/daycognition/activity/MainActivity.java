@@ -15,7 +15,7 @@ import com.zhowin.daycognition.databinding.ActivityMainBinding;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding> {
 
-    private int maxLength = 360;
+    private int maxLength = 366;
     private String editContent;
 
     @Override

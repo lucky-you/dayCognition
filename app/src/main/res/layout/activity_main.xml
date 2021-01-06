@@ -35,7 +35,7 @@
             <EditText
                 android:id="@+id/editContent"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="360dp"
                 android:layout_margin="16dp"
                 android:background="@drawable/shape_white_color_bg"
                 android:gravity="left"
@@ -53,7 +53,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 android:gravity="center"
-                android:text="0/350"
+                android:text="0/366"
                 android:textColor="@color/color_666"
                 android:textSize="14sp" />
 

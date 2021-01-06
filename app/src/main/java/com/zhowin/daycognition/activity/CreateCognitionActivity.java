@@ -84,10 +84,10 @@ public class CreateCognitionActivity extends BaseActivity<ActivityCreateCognitio
         mBinding.tvCurrentDayTime.setText(currentDayTime);
 
         //随机获取颜色
-        Random random = new Random();
-        int index = random.nextInt(ConstantValue.bgColorList.length);
-        int color = ConstantValue.bgColorList[index];
-        mBinding.llCognitionLayout.setBackgroundColor(getBaseColor(color));
+//        Random random = new Random();
+//        int index = random.nextInt(ConstantValue.bgColorList.length);
+//        int color = ConstantValue.bgColorList[index];
+//        mBinding.llCognitionLayout.setBackgroundColor(getBaseColor(R.color.theme_color));
     }
 
     @Override
@@ -112,9 +112,8 @@ public class CreateCognitionActivity extends BaseActivity<ActivityCreateCognitio
                     .callback(new PermissionUtils.SimpleCallback() {
                         @Override
                         public void onGranted() {
-                            saveCognitionToAlbum(mBinding.llCognitionLayout);
+                            saveCognitionToAlbum();
                         }
-
                         @Override
                         public void onDenied() {
                         }
@@ -122,8 +121,8 @@ public class CreateCognitionActivity extends BaseActivity<ActivityCreateCognitio
         }
     }
 
-    private void saveCognitionToAlbum(View cognitionRootLayout) {
-        Bitmap bitmapSrc = getCacheBitmapFromView(cognitionRootLayout);
+    private void saveCognitionToAlbum() {
+        Bitmap bitmapSrc = getCacheBitmapFromView(mBinding.llCognitionLayout);
         ThreadUtils.executeBySingle(new ThreadUtils.SimpleTask<File>() {
             @Override
             public File doInBackground() throws Throwable {
