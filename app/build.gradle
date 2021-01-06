@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'org.greenrobot.greendao'
 android {
     compileSdkVersion 29
     buildToolsVersion "30.0.1"
@@ -10,14 +10,35 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            keyAlias 'app'
+            keyPassword '110120119'
+            storeFile file('../appKey.keystore')
+            storePassword '110120119'
+        }
+    }
     buildTypes {
         release {
+            debuggable false
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            shrinkResources false
+            zipAlignEnabled true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField("boolean", "IS_LOG", "false")
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField("boolean", "IS_LOG", "true")
         }
     }
     dataBinding {
@@ -26,6 +47,22 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            def date = new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("GMT+08"))
+            if (variant.buildType.name.equals('debug')) {
+                outputFileName = "日知录${date}_${versionName}.apk"
+            }
+            if (variant.buildType.name.equals('release')) {
+                outputFileName = "日知录${date}_${versionName}.apk"
+            }
+        }
+    }
+    greendao {
+        schemaVersion 1
+        daoPackage 'com.zhowin.daycognition'
+        targetGenDir 'src/main/java/dao'
     }
 }
 
@@ -43,4 +80,5 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'me.jessyan:autosize:1.1.2'
     implementation 'me.yokeyword:fragmentationx:1.0.2'
+    implementation 'org.greenrobot:greendao:3.2.2'
 }

@@ -3,8 +3,11 @@ package com.zhowin.daycognition.activity;
 
 import android.text.Editable;
 import android.text.InputFilter;
+import android.text.TextUtils;
 import android.view.View;
 
+import com.blankj.utilcode.util.KeyboardUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.zhowin.daycognition.R;
 import com.zhowin.daycognition.base.BaseActivity;
 import com.zhowin.daycognition.callback.OnTextChangedListener;
@@ -12,7 +15,7 @@ import com.zhowin.daycognition.databinding.ActivityMainBinding;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding> {
 
-    private int maxLength = 350;
+    private int maxLength = 360;
     private String editContent;
 
     @Override
@@ -42,6 +45,11 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
 
     @Override
     public void onClick(View v) {
+        if (TextUtils.isEmpty(editContent)) {
+            ToastUtils.showLong("内容不能为空哦");
+            return;
+        }
+        KeyboardUtils.hideSoftInput(mContext);
         switch (v.getId()) {
             case R.id.tvCreateQrCode:
                 CreateQrCodeActivity.start(mContext, editContent);
@@ -50,5 +58,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
                 CreateCognitionActivity.start(mContext, editContent);
                 break;
         }
+
     }
 }

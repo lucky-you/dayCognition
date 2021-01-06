@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="生成二维码"
+                android:text="历史日知"
                 android:textColor="@color/color_white"
                 android:textSize="15sp"
                 android:textStyle="bold"
@@ -46,49 +46,14 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clQrRootLayout"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/historyRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:layout_margin="16dp"
-            android:background="@drawable/shape_white_color_bg">
+            android:layout_height="wrap_content"
+            android:background="@color/color_white"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
 
-            <ImageView
-                android:id="@+id/ivQrImage"
-                android:layout_width="240dp"
-                android:layout_height="240dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tvCurrentDayTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:gravity="center"
-                android:text="2020-01-01"
-                android:textColor="@color/color_666"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintRight_toRightOf="parent" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        <TextView
-            android:id="@+id/tvSaveQrCode"
-            android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:layout_gravity="center"
-            android:layout_margin="20dp"
-            android:background="@drawable/shape_theme_color_bg"
-            android:gravity="center"
-            android:text="保存二维码"
-            android:textColor="@color/color_white"
-            android:textStyle="bold" />
     </LinearLayout>
 
 </layout>

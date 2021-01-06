@@ -20,7 +20,7 @@
             android:layout_height="44dp"
             android:background="@color/theme_color"
             android:gravity="center"
-            android:text="每日认知"
+            android:text="日知录"
             android:textColor="@color/color_white"
             android:textSize="15sp"
             android:textStyle="bold"
@@ -35,12 +35,11 @@
             <EditText
                 android:id="@+id/editContent"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="400dp"
                 android:layout_margin="16dp"
                 android:background="@drawable/shape_white_color_bg"
                 android:gravity="left"
-                android:hint="请输入自己想说的话或者想法"
-                android:minHeight="200dp"
+                android:hint="请输入自己想说的话...."
                 android:padding="8dp"
                 android:textColor="@color/color_333"
                 android:textColorHint="@color/color_999"
@@ -63,8 +62,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="14dp"
+            android:layout_height="44dp"
+            android:layout_margin="16dp"
             android:orientation="horizontal">
 
             <TextView
@@ -72,7 +71,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_margin="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/shape_theme_color_bg"
                 android:gravity="center"
@@ -85,7 +85,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_margin="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/shape_theme_color_bg"
                 android:gravity="center"

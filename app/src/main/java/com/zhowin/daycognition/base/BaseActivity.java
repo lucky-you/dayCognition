@@ -1,6 +1,7 @@
 package com.zhowin.daycognition.base;
 
 import android.content.pm.ActivityInfo;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 
@@ -73,5 +74,26 @@ public abstract class BaseActivity<VDB extends ViewDataBinding> extends SupportA
         for (int i = 0; i < ids.length; i++) {
             get(ids[i]).setOnClickListener(this);
         }
+    }
+
+    /**
+     * 获取 view 的截图
+     *
+     * @param view view的范围
+     * @return bitmap
+     */
+    protected Bitmap getCacheBitmapFromView(View view) {
+        final boolean drawingCacheEnabled = true;
+        view.setDrawingCacheEnabled(drawingCacheEnabled);
+        view.buildDrawingCache(drawingCacheEnabled);
+        final Bitmap drawingCache = view.getDrawingCache();
+        Bitmap bitmap;
+        if (drawingCache != null) {
+            bitmap = Bitmap.createBitmap(drawingCache);
+            view.setDrawingCacheEnabled(false);
+        } else {
+            bitmap = null;
+        }
+        return bitmap;
     }
 }
