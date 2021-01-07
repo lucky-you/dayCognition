@@ -10,4 +10,15 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="Scroll_no_fadingEdge">
+        <item name="android:overScrollMode">never</item>
+        <item name="android:scrollbars">none</item>
+        <item name="android:fadingEdge">none</item>
+    </style>
+    <style name="RecycleViewStyle" parent="Scroll_no_fadingEdge">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
 </resources>

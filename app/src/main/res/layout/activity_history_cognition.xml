@@ -48,11 +48,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/historyRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/color_white"
-            android:overScrollMode="never"
-            android:scrollbars="none" />
+            style="@style/RecycleViewStyle" />
 
     </LinearLayout>
 

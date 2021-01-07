@@ -1,5 +1,5 @@
 <resources>
 
     <string name="app_name">日知录</string>
-
+    <string name="not_have_data">暂无数据</string>
 </resources>

@@ -22,7 +22,6 @@ public class HistoryCognitionAdapter extends BaseQuickAdapter<HistoryList, BaseV
 
     @Override
     protected void convert(@NonNull BaseViewHolder helper, HistoryList item) {
-        System.out.println("info:" + item.toString());
         helper.setText(R.id.tvContent, item.contentText)
                 .setText(R.id.tvCreateTime, item.createTime);
 
