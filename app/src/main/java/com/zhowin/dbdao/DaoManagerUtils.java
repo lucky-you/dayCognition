@@ -2,6 +2,7 @@ package com.zhowin.dbdao;
 
 
 import android.content.Context;
+import android.util.Log;
 
 import com.zhowin.daycognition.HistoryListDao;
 import com.zhowin.daycognition.model.HistoryList;
@@ -63,21 +64,22 @@ public class DaoManagerUtils {
     /**
      * 查询所有数据
      */
-    public static List<HistoryList> queryAll() {
-        QueryBuilder<HistoryList> builder = DBManager.getInstance().getHistoryDao().queryBuilder();
+    public static List<HistoryList> queryAllHistoryData() {
+        QueryBuilder<HistoryList> builder = DBManager.getInstance().getHistoryDao().queryBuilder().orderDesc(HistoryListDao.Properties.CreateTime);
         return builder.build().list();
     }
 
     /**
-     * 插入数据
+     * 插入内容
      *
-     * @param key 信息
+     * @param key  关键内容
+     * @param time 创建时间
      */
-    public static void insertHistoryDao(String key, String time) {
-        HistoryList history = new HistoryList(key, time);
+    public static void insertHistoryDao(String keyText, String time) {
+        HistoryList history = new HistoryList(keyText, time);
         HistoryListDao historyDao = DBManager.getInstance().getHistoryDao();
         List<HistoryList> list = historyDao.queryBuilder().where(HistoryListDao.Properties.CreateTime.eq(time)).list();
-        if (list.size() > 0) {// 去重
+        if (list.size() > 0) {// 时间去重
             historyDao.delete(list.get(0));
         }
         insertHistoryListData(history);

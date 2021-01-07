@@ -14,7 +14,7 @@ public class DBManager {
     private static DaoSession daoSession;
 
     public static void initDao() {
-        DaoMaster.DevOpenHelper devOpenHelper = new DaoMaster.DevOpenHelper(BaseApplication.getInstance(), DB_NAME, null);
+        MySQLiteOpenHelper devOpenHelper = new MySQLiteOpenHelper(BaseApplication.getInstance(), DB_NAME, null);
         daoMaster = new DaoMaster(devOpenHelper.getWritableDatabase()); //可写数据库
         daoSession = daoMaster.newSession();
     }

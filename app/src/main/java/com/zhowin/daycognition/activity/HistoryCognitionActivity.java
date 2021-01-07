@@ -42,7 +42,7 @@ public class HistoryCognitionActivity extends BaseActivity<ActivityHistoryCognit
 
     @Override
     public void initData() {
-        List<HistoryList> historyLists = DaoManagerUtils.queryAll();
+        List<HistoryList> historyLists = DaoManagerUtils.queryAllHistoryData();
         if (historyLists != null && !historyLists.isEmpty()) {
             HistoryCognitionAdapter historyCognitionAdapter = new HistoryCognitionAdapter(historyLists);
             mBinding.historyRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));

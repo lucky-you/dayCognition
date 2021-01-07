@@ -75,4 +75,13 @@ public class HistoryList {
         this.exitText = exitText;
     }
 
+    @Override
+    public String toString() {
+        return "HistoryList{" +
+                "id=" + id +
+                ", contentText='" + contentText + '\'' +
+                ", createTime='" + createTime + '\'' +
+                ", exitText='" + exitText + '\'' +
+                '}';
+    }
 }
